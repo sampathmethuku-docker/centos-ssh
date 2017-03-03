@@ -25,16 +25,16 @@ docker push sampathmethuku/centos-ssh:latest
 docker run --privileged  -P -td -e "container=docker"  -v /sys/fs/cgroup:/sys/fs/cgroup  sampathmethuku/centos-ssh  /usr/sbin/init
 ```
 
-###how-toConnect:
-docker exec <container-id> hostname -I 
-ssh <container-ip>
+###connect to container with ssh:
+docker exec < container-id > hostname -I 
+ssh < container-ip >
 
 
 ### see maping port for 22
 
-docker port <container-id>
+docker port < container-id >
 
-accessing container from remote host:
+###accessing container from remote host:
 ssh -p < maping-port > root@< docker-host >
 
 ex : ssh -p 32769 root@slc12nct.us.oracle.com
@@ -43,6 +43,9 @@ ex : ssh -p 32769 root@slc12nct.us.oracle.com
 
 ##Reference:
 https://github.com/systemd/systemd/issues/589
+
 https://kuldeeparya.wordpress.com/2015/05/08/dockerfile-dockerizing-sshd-daemon-on-centos
+
 https://docs.docker.com/engine/examples/running_ssh_service
+
 http://stackoverflow.com/questions/28134239/how-to-ssh-into-docker
